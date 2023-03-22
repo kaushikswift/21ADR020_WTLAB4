@@ -1,0 +1,426 @@
+<html>
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+        <style>
+            body
+            {
+                background-color: black;
+            }
+            #gg{
+                border: 7px solid black;
+                background-color: lightgray;
+                color: black;
+            }
+            p
+            {
+                font-size: larger;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            }
+            #bb
+            {
+                margin-left: 320px;
+            }
+            #bbb
+            {
+                margin-left: 340px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container-fluid col-5" id="gg">
+            <header class="bg-dark py-5">
+                <div class="container px-5">
+                    <div class="row gx-5 align-items-center justify-content">
+                        <div class="col-lg-3 col-xl-7 col-xxl-12">
+                            <div class="my-5">
+                                <h1 class="display-5 fw-bolder text-white text-center mb-2 py-4">OPEN ELECTIVE FOR 5TH SEMESTER</h1>
+                                <p class="lead fw-normal text-white-50 mb-4">Students who are in their 4th semester are asked to fill this form regarding the <b>Open-Elective</b> subject for the upcoming semester. You are given with choices, first come first serve basis is followed, so try to fill out this form as soon as possible</p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <br>
+            <form action=" " name="formss" onsubmit="return validation()">
+                <p>Fullname</p>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="uname" name="uname">
+                    <span class="input-group-text">
+                        <button type="button" class="btn btn-info" onclick="return validation_name()">Confirm name</button>
+                    </span>
+                    <br>
+                </div>
+                <div class="form-text">
+                    <p id="namecheck"></p>
+                </div>
+                <br>
+                
+                <p>Email ID</p>
+                <div class="input-group mb-3">
+                    <input type="email" class="form-control" id="eb" name="eb">
+                    <span class="input-group-text">
+                        <button type="button" class="btn btn-info" onclick="return validation_email()">Confirm mail</button>
+                    </span>
+                </div>
+                <div class="form-text" id="emailcheck">
+                    <p id="emailchecks"></p>
+                </div>
+                <br>
+
+                <p>Password</p>
+                <div class="input-group mb-3">
+                    <input type="password" class="form-control" id="pwd" name="pd">
+                    <span class="input-group-text">
+                        <button type="button" class="btn btn-info" onclick="return validation_pwd()">Submit Password</button>
+                    </span>
+                </div>
+                <div class="form-text" id="pwdcheck">
+                    <p id="pwdchecks"></p>
+                </div>
+                <br>
+
+                <p>Confirm Password</p>
+                <div class="input-group mb-3">
+                    <input type="password" class="form-control" id="cpwd" name="cpd">
+                    <span class="input-group-text">
+                        <button type="button" class="btn btn-info" onclick="return validation_cpwd()">Confirm Password</button>
+                    </span>
+                </div>
+                <div class="form-text" id="cpwdcheck">
+                    <p id="cpwdchecks"></p>
+                </div>
+                <br>
+
+                <p>Mobile Number</p>
+                <div class="input-group mb-3">
+                    <input type="tel" id="pn" name="phn" class="form-control">
+                    <span class="input-group-text">
+                        <button type="button" class="btn btn-info" onclick="return validation_phn()">Submit</button>
+                    </span>
+                </div>
+                <div class="form-text" id="telcheck">
+                    <p id="telcheck"></p>
+                </div>
+                <br>
+                
+                <p>Department</p>
+                <div class="mb-3">
+                    <select name="dept">
+                        <option value="">Select</option>
+                        <option value="AD">Data Science</option>
+                        <option value="ML">Machine Learning</option>
+                        <option value="CS">Computer Science</option>
+                        <option value="IT">Information Technology</option>
+                    </select>
+                </div>
+                <button type="button" id="bbb" class="btn btn-info" value="submit" onclick="return validation_dept()">SUBMIT</button>
+                
+                <div class="form-text">
+                    <p id="deptcheck"></p>
+                </div>
+                <br>
+
+                Programming Languages known:
+                <div class="mb-3 form-check">
+                
+                    <input type="checkbox" class="form-check-input" id="ec" name="plk">
+                    <label class="form-check-label" for="ec" id="plk1">C programming</label>
+                </div>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="ecp" name="plk">
+                    <label class="form-check-label" for="ecp">C++ programming</label>
+                </div>
+                <p></p>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="jp" name="plk">
+                    <label class="form-check-label" for="jp">Java programming</label>
+                </div>
+                <p></p>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="py" name="plk">
+                    <label class="form-check-label" for="py">Python programming</label>
+                </div>
+                <p></p>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="rp" name="plk">
+                    <label class="form-check-label" for="rp">R programming</label>
+                </div>
+                <button type="button" id="bbb" class="btn btn-info" value="submit" onclick="return validation_plk()">SUBMIT</button>
+                
+                <div class="form-text">
+                    <p id="plkcheck"></p>
+                </div>
+                <br>
+                
+                Course for Open Elective:
+                <div class="mb-3">
+                    <br>
+                    <input type="radio" class="form-check-input" id="ds"  name="oes">
+                    <label for="ds" class="form-check-label">Data Structures</label>
+                    <br>
+                    <input type="radio" class="form-check-input" id="wt"  name="oes">
+                    <label for="wt" class="form-check-label">Web technology</label>
+                    <br>
+                    <input type="radio" class="form-check-input" id="sql"  name="oes">
+                    <label for="sql" class="form-check-label">SQL</label>
+                    <br>
+                    <input type="radio" class="form-check-input" id="Sc"  name="oes">
+                    <label for="Sc" class="form-check-label">Scripting in python</label>
+                    
+                </div>
+                <button type="button" id="bbb" class="btn btn-info" value="submit" onclick="return validation_oes()">SUBMIT</button>
+                <div class="form-text">
+                    <p id="oescheck"></p>
+                </div>
+                <br>
+
+                Experience with any one of the open elective subjects:
+                <br>
+                <textarea name="exp" id="cum" cols="99" rows="10">
+
+                </textarea>
+                <br><br><br>
+                <input type="submit" value="FINAL SUBMIT" id="bb" class="btn btn-success">
+
+            </form>
+        </div>
+        <script>
+            function validation_name() {
+                // name check //
+                var a = document.formss.uname.value;
+                if (a == '') {
+                    document.getElementById('namecheck').innerHTML = "Empty";
+                    document.formss.uname.focus();
+                    return false;
+                }
+                else if (!isNaN(a)) {
+                    document.getElementById('namecheck').innerHTML = "Enter only characters...";
+                    document.formss.uname.focus();
+                    return false;
+                }
+                else
+                {
+                    document.getElementById('namecheck').innerHTML = " ";
+                    document.formss.eb.focus();
+                    return true;
+                }
+                
+            }
+            function validation_email()
+            {
+                //email check//
+                var b = document.formss.eb.value;
+                var at = b.indexOf('@');
+                if(!b.includes('.com'))
+                {
+                    document.getElementById('emailchecks').innerHTML = "Enter a valid Email-ID";
+                    document.formss.eb.focus();
+                    return false;
+                }
+                if(at==null)
+                {
+                    document.getElementById('emailchecks').innerHTML = "Enter a valid Email-ID";
+                    document.formss.eb.focus();
+                    return false;
+                }
+                if(b.includes('.com') && at!=null)
+                {
+                    document.getElementById('emailchecks').innerHTML = "";
+                    document.formss.pwd.focus();
+                    return true;
+                }
+            }
+            function validation_pwd()
+            {
+                var pass = document.formss.pd.value;
+                var iff = /[A-Z]/.test(pass);
+                var ifff = /\d/.test(pass);
+                if(pass=='')
+                {
+                    document.getElementById('pwdchecks').innerHTML = "Kindly enter the password";
+                    document.formss.pd.focus();
+                    return false;
+                }
+                if(pass.length<8)
+                {
+                    document.getElementById('pwdchecks').innerHTML = "Minimum Length must be of 8 characters";
+                    document.formss.pd.focus();
+                    return false;
+                }
+                if(ifff==false)
+                {
+                    document.getElementById('pwdchecks').innerHTML = "Password must atleast contain a digit";
+                    document.formss.pd.focus();
+                    return false;
+                }
+                if(iff==false)
+                {
+                    document.getElementById('pwdchecks').innerHTML = "Password must contain atleast one uppercase letter";
+                    document.formss.pd.focus();
+                    return false;
+                }
+                if(pass!='' && pass.length>=8 && ifff==true && iff==true)
+                {
+                    document.getElementById('pwdchecks').innerHTML = " ";
+                    document.formss.cpd.focus();
+                    return true;
+                }
+            }
+            function validation_cpwd()
+            {
+                var pass1 = document.formss.pd.value;
+                var pass2 = document.formss.cpd.value;
+                if(pass1!=pass2)
+                {
+                    document.getElementById('cpwdchecks').innerHTML = "Passwords do not match";
+                    document.formss.cpd.focus();
+                    return false;
+                }
+                else
+                {
+                    document.getElementById('pwdchecks').innerHTML = "";
+                    document.formss.phn.focus();
+                    return true;
+                }
+            }
+            function validation_phn()
+            {
+                var d = (document.formss.phn.value);
+                var de = d.toString();
+                var up = /[A-Z]/.test(de);
+                var lo = /[a-z]/.test(de);
+                if(de.length!=10)
+                {
+                    document.getElementById('telcheck').innerHTML = "Mobile Number should contain exactly 10 digits.";
+                    document.formss.phn.focus();
+                    return false;
+                }
+                if(up==true || lo==true)
+                {
+                    document.getElementById('telcheck').innerHTML = "Do not enter alphabets";
+                    document.formss.phn.focus();
+                    return false;
+                }
+                if(de.length==10 && up==false && lo==false)
+                {
+                    document.getElementById('telcheck').innerHTML = "";
+                    
+                    return true;
+                } 
+            }
+            function validation_plk()
+            {
+                var e = document.formss.plk;
+                var flag=0;
+                for(var i=0;i<e.length;i++)
+                {
+                    if(e[i].checked==true)
+                    {
+                        flag=1;
+                        break;
+                    }
+                }
+                if(flag==0)
+                {
+                    document.getElementById('plkcheck').innerHTML = "Select any one Programming Language!!!";
+                    document.formss.plk.focus();
+                    return false;
+                }
+                else
+                {
+                    document.getElementById('plkcheck').innerHTML = "";
+                    
+                    return true;
+                }
+            }
+            function validation_oes()
+            {
+                var f = document.formss.oes;
+                var flag1=0;
+                for(var i=0;i<f.length;i++)
+                {
+                    if(f[i].checked==true)
+                    {
+                        flag1=1;
+                        break;
+                    }
+                }
+                if(flag1==0)
+                {
+                    document.getElementById('oescheck').innerHTML = "Select any one Open Elective!!!";
+                    document.formss.oes.focus();
+                    return false;
+                }
+                else
+                {
+                    document.getElementById('oescheck').innerHTML = "";
+                    return true;
+                }
+            }
+            function validation_dept()
+            {
+                var g = document.formss.dept;
+                if(g.selectedIndex==0)
+                {
+                    document.getElementById('deptcheck').innerHTML = "Select any one Department!!";
+                    document.formss.dept.focus();
+                    return false;
+                }
+                else
+                {
+                    document.getElementById('deptcheck').innerHTML = "";
+                    return true;
+                }
+            }
+            function validation()
+            {
+                var a = document.formss.uname.value;
+                var b = document.formss.eb.value;
+                var pass1 = document.formss.pd.value;
+                var pass2 = document.formss.cpd.value;
+                var d = document.formss.phn.value;
+                var e = document.formss.plk;
+                var flag=0;
+                for(var i=0;i<e.length;i++)
+                {
+                    if(e[i].checked==true)
+                    {
+                        flag=1;
+                        break;
+                    }
+                }
+                var f = document.formss.oes;
+                var flag1=0;
+                for(var i=0;i<f.length;i++)
+                {
+                    if(f[i].checked==true)
+                    {
+                        flag1=1;
+                        break;
+                    }
+                }
+                var g = document.formss.dept;
+                var flag3=0;
+                if(g.selectedIndex==0)
+                {
+                    flag3=1;
+                }
+                var h = document.formss.exp.value;
+                if(h=='')
+                {
+                    alert("Even if there is no prior experiences, specify it.");
+                    document.formss.exp.focus();
+                    return false;
+                }
+                if(a=='' || h=='' || b=='' || pass1=='' || pass2=='' || d=='' || flag1==0 || flag==0 || flag3==0)
+                {
+                    alert("Fill all the details in the form")
+                    return false;
+                }
+                return true;
+            }
+        </script>
+    </body>
+</html>
